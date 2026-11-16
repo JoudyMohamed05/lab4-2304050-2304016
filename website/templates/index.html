@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="cards">
+    <a class="card" href="{{ url_for('search') }}"><h2>Search books</h2><p>Title, price range and category</p></a>
+    <a class="card" href="{{ url_for('catalogue') }}"><h2>Catalogue</h2><p>Books with author, publisher and category</p></a>
+    <a class="card" href="{{ url_for('reports') }}"><h2>Reports</h2><p>Counts, averages and totals</p></a>
+    <a class="card" href="{{ url_for('loans') }}"><h2>Loans</h2><p>Open loans and unused books and members</p></a>
+    <a class="card" href="{{ url_for('most_borrowed') }}"><h2>Most borrowed</h2><p>Top books and top member</p></a>
+    <a class="card" href="{{ url_for('authors_books') }}"><h2>Authors and books</h2><p>Books per author, same-country books</p></a>
+</div>
+{% endblock %}

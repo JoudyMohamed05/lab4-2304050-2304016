@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="get" class="search">
+    <label>Title keyword
+        <input type="text" name="keyword" value="{{ keyword }}" placeholder="e.g. Pride">
+    </label>
+    <label>Min price
+        <input type="text" name="min_price" value="{{ min_price }}" placeholder="Min $">
+    </label>
+    <label>Max price
+        <input type="text" name="max_price" value="{{ max_price }}" placeholder="Max $">
+    </label>
+    <label>Category
+        <select name="category">
+            <option value="">All categories</option>
+            {% for c in categories %}
+            <option value="{{ c[0] }}" {% if category == c[0]|string %}selected{% endif %}>{{ c[1] }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <button type="submit">Search</button>
+</form>
+{% include "sections.html" %}
+{% endblock %}

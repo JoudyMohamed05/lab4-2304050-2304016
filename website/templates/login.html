@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% from "_pw.html" import password_field %}
+{% block bodyclass %}auth-page{% endblock %}
+{% block content %}
+<form method="post" class="auth" novalidate data-validate>
+    <p class="auth-sub">Welcome back. Log in to open the library.</p>
+    <ul class="error js-errors" {% if not errors %}hidden{% endif %}>
+        {% for e in errors %}<li>{{ e }}</li>{% endfor %}
+    </ul>
+    <div class="field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" value="{{ email }}" autocomplete="email">
+    </div>
+    {{ password_field("Password", "password", "current-password") }}
+    <button type="submit" class="primary">Log in</button>
+    <p class="switch">No account yet? <a href="{{ url_for('register') }}">Register</a></p>
+</form>
+<script src="{{ url_for('static', filename='validate.js') }}"></script>
+<script src="{{ url_for('static', filename='password.js') }}"></script>
+{% endblock %}
