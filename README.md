@@ -82,3 +82,5 @@ Bonus: the search form in F2.1 uses prepared statements (`%s` placeholders); the
 4 authors with books and 1 author without books (Paulo Coelho), 3 publishers, 3 categories, 10 books, 5 members, 12 loans. It contains two authors from the same country (Egypt and UK), an author who wrote 2 or more books, an author and a publisher from the same country, books priced between 15 and 20, books never borrowed, a member with no loans and loans that are not returned yet.
 
 The `price` column of `book` has `CHECK (price >= 0)`, so a book can never get a negative price.
+
+Reviewed and tested by Raneem Ahmed.
